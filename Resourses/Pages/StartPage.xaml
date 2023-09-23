@@ -1,0 +1,58 @@
+﻿<Page x:Class="WpfApp2.Resourses.Pages.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Resourses.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="403" d:DesignWidth="800"
+      Title="StartPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Height="403" Margin="0,0,0,0" Width="320" Grid.Column="0" Background="WhiteSmoke">
+            <TextBlock Height="30" Text="Ivents" TextAlignment="Center" FontSize="25" Foreground="Black" FontWeight="Medium" FontStyle="Italic"/>
+            <DataGrid Name="DtgIvents"
+                      IsReadOnly="True"
+                      Margin="0,10,0,0"
+                      Width="280"
+                      Height="250"
+                      Foreground="Black"
+                      Background="White"
+                      AutoGenerateColumns="False"
+                      VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="ID" Width="25"
+                        Binding="{Binding Id_ivent}"/>
+                    <DataGridTextColumn
+                        Header="Ivent Name" Width="*"
+                        Binding="{Binding Name}"/>
+                    <DataGridTextColumn
+                        Header="Ivent date" Width="*"
+                        Binding="{Binding Date}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="40" Width="100"
+                    Content="Добавить"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,40,0,0" Click="Button_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Background="WhiteSmoke" Orientation="Horizontal">
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="40" Width="100"
+                    Content="Подробнее"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="25,0,0,200" Click="Web_Click"/>
+            <Image Source="/Resourses/Image/poster.jpg" Height="390" Width="300" Margin="20,7,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
